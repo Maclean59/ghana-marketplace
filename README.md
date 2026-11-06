@@ -1,19 +1,19 @@
 # MarketDay — Ghana Marketplace
 
-A bold, colorful storefront preview for a Ghana-based marketplace. The concept brings together independent sellers, shoppers, and promoters: sellers decide their own commission offer, and people can apply to promote products.
+A colorful storefront prototype for a Ghana-based marketplace connecting independent sellers, shoppers, and promoters.
 
-## Preview
+## Current status
 
-This repository currently contains a static GitHub Pages prototype (`index.html`, `styles.css`, and `script.js`). It includes a responsive storefront, category filters, sample product cards, a seller commission preview, and a promoter application form.
+The repository contains a static storefront and a **Supabase seller-application backend starter**. The seller intake flow supports account creation/sign-in, general business location, and a pending application with private Ghana Card front/back and selfie uploads through an authenticated Edge Function. See [BACKEND-SETUP.md](BACKEND-SETUP.md) for deployment steps.
 
-## Important: prototype, not yet a live marketplace
+The backend is not live until you create/configure a Supabase project, run the migration, set the frontend public project configuration, deploy the Edge Function with a restricted allowed origin, secure Auth/admin access, and deploy the site over HTTPS. No credentials were provided, so the committed configuration is deliberately a placeholder.
 
-GitHub Pages serves static files. In this prototype, sample commission offers and promoter applications are stored only in the visitor's browser using `localStorage`; they are not sent to the business, shared with sellers, or visible to other users. Product sharing does not create trackable referral links. There is no live checkout, account system, seller dashboard, commission settlement, or payout processing yet. Do not enter sensitive personal information in the demo form.
+## Sensitive data notice
 
-## What is needed for production
+Ghana Card images and selfies are sensitive identity documents. Do not submit real documents until you complete Ghana-specific privacy/legal review, publish an accurate privacy notice and retention/deletion schedule, secure and test administrator access, and set up incident response and backups. Never commit secrets, service-role keys, or real identity documents to GitHub. Documents use private object storage; no public document URLs are created.
 
-To accept real applications and run seller-defined promoter commissions, the next version needs a secure backend and database, seller/promoter accounts and review workflows, product and order records, consent and privacy handling, unique referral attribution, commission rules and refunds/chargeback handling, and a payment provider that can support the operating business and payouts in Ghana. Secret keys and payment credentials must be kept on the backend, never in the GitHub Pages frontend. Confirm provider availability and legal/tax requirements for Ghana before launch.
+## Still not implemented
 
-## Run locally
+This is not yet a full marketplace. There is no production seller/promoter dashboard, listing management, checkout, order/referral tracking, recurring membership billing, Mobile Money collection to the owner, or commission/payout system. The proposed GH₵30 promoter and GH₵50/GH₵100 seller plans are not charged. Payment provider onboarding and supported Ghana settlement/payout flows must be confirmed before implementation.
 
-Open `index.html` in a browser, or serve this folder with any static web server. The site can be published with GitHub Pages from the repository's `main` branch and root folder.
+See `BACKEND-SETUP.md` for Supabase configuration and test checklist.

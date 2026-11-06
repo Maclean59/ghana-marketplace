@@ -1,0 +1,4 @@
+project_id = "marketday"
+
+[functions.apply-seller]
+verify_jwt = true

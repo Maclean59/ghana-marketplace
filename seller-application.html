@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fbf2df">
-  <meta name="description" content="Seller application form preview for MarketDay Ghana.">
+  <meta name="description" content="Apply to sell on MarketDay Ghana.">
   <title>Apply as a seller — MarketDay</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,42 +22,45 @@
     <div class="seller-apply-heading">
       <p class="eyebrow"><span class="eyebrow-dot"></span> SELL WITH MARKETDAY</p>
       <h1>Let's get to<br><span>know your shop.</span></h1>
-      <p>Share your shop details and the information needed for seller verification. Your application and identity documents must only be submitted through a secure, private service once one is connected.</p>
+      <p>Create an account, then send your seller application. Your Ghana Card and selfie are uploaded to private storage for authorized verification only.</p>
     </div>
-
     <aside class="privacy-warning" role="note">
-      <strong>Prototype only — do not enter real personal data or select real ID/selfie photos here.</strong>
-      <p>This GitHub Pages preview has no secure server. Nothing on this form is submitted or stored, but a live website needs encrypted private upload, strict access controls, a retention/deletion policy, and your consent before it can collect Ghana Card images or a selfie. Never send ID photos through a public page, email, or chat.</p>
+      <strong>Identity documents are sensitive. Read this before applying.</strong>
+      <p>Documents are sent to a private storage bucket and are not public product images. Only authorized administrators can review them. By submitting, you consent to their use for seller identity verification. Do not collect or upload data until you have configured your production privacy notice, access controls, retention/deletion schedule, backups, and incident-response process in accordance with applicable Ghanaian requirements.</p>
     </aside>
-
+    <section class="account-panel" aria-labelledby="account-title">
+      <div class="form-section-title"><span>✦</span><div><h2 id="account-title">Your secure account</h2><p>Sign in, or create an account with your email and a strong password.</p></div></div>
+      <div class="account-mode" role="group" aria-label="Account action"><button type="button" class="mode-button active" data-mode="signup">Create account</button><button type="button" class="mode-button" data-mode="signin">Sign in</button></div>
+      <label class="account-label" for="account-email">Email address<input id="account-email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"></label>
+      <label class="account-label" for="account-password">Password<input id="account-password" type="password" autocomplete="new-password" required minlength="10" maxlength="128" placeholder="At least 10 characters"></label>
+      <p class="account-status" id="account-status" role="status" aria-live="polite"></p>
+    </section>
     <form class="seller-form" id="seller-application-form">
       <div class="form-section-title"><span>01</span><div><h2>Your business</h2><p>Tell us who you are and what your shop is called.</p></div></div>
       <div class="form-fields two-columns">
-        <label for="seller-full-name">Seller's full name <span>*</span><input id="seller-full-name" name="fullName" required maxlength="120" autocomplete="name" placeholder="Full name (preview only)"></label>
+        <label for="seller-full-name">Seller's full name <span>*</span><input id="seller-full-name" name="fullName" required maxlength="120" autocomplete="name" placeholder="Full legal name"></label>
         <label for="seller-store-name">Store name <span>*</span><input id="seller-store-name" name="storeName" required maxlength="100" placeholder="Your shop's name"></label>
       </div>
-
-      <div class="form-section-title"><span>02</span><div><h2>Seller verification</h2><p>Required documents in the intended private verification flow.</p></div></div>
+      <div class="form-section-title"><span>02</span><div><h2>Seller verification</h2><p>Image files accepted: JPG, PNG, or WebP; maximum 5 MB each.</p></div></div>
       <div class="document-grid">
-        <label class="upload-field" for="ghana-card-front"><span class="upload-icon">↑</span><strong>Ghana Card — front</strong><small>Image file · required in production</small><input type="file" id="ghana-card-front" name="ghanaCardFront" accept="image/*" disabled><span class="upload-state">Secure uploads not available in preview</span></label>
-        <label class="upload-field" for="ghana-card-back"><span class="upload-icon">↑</span><strong>Ghana Card — back</strong><small>Image file · required in production</small><input type="file" id="ghana-card-back" name="ghanaCardBack" accept="image/*" disabled><span class="upload-state">Secure uploads not available in preview</span></label>
-        <label class="upload-field" for="seller-selfie"><span class="upload-icon">☺</span><strong>Seller selfie</strong><small>Image file · required in production</small><input type="file" id="seller-selfie" name="selfie" accept="image/*" disabled><span class="upload-state">Secure uploads not available in preview</span></label>
+        <label class="upload-field" for="ghana-card-front"><span class="upload-icon">↑</span><strong>Ghana Card — front <span>*</span></strong><small>JPG, PNG, WebP · max 5 MB</small><input type="file" id="ghana-card-front" name="ghanaCardFront" accept="image/jpeg,image/png,image/webp" required><span class="upload-state" data-file-status="ghana-card-front">Choose an image</span></label>
+        <label class="upload-field" for="ghana-card-back"><span class="upload-icon">↑</span><strong>Ghana Card — back <span>*</span></strong><small>JPG, PNG, WebP · max 5 MB</small><input type="file" id="ghana-card-back" name="ghanaCardBack" accept="image/jpeg,image/png,image/webp" required><span class="upload-state" data-file-status="ghana-card-back">Choose an image</span></label>
+        <label class="upload-field" for="seller-selfie"><span class="upload-icon">☺</span><strong>Seller selfie <span>*</span></strong><small>JPG, PNG, WebP · max 5 MB</small><input type="file" id="seller-selfie" name="selfie" accept="image/jpeg,image/png,image/webp" required><span class="upload-state" data-file-status="seller-selfie">Choose an image</span></label>
       </div>
-      <p class="data-minimization"><strong>Identity privacy:</strong> Ghana Card images and selfies are highly sensitive. In production, collect these only for a clear verification purpose, restrict access to authorized reviewers, encrypt them in transit and at rest, and delete them when no longer legally or operationally necessary. Consider a qualified identity-verification provider rather than keeping copies yourself.</p>
-
-      <div class="form-section-title location-title"><span>03</span><div><h2>Your location</h2><p>For now, request only the general area needed to identify the seller's operating region.</p></div></div>
+      <p class="data-minimization"><strong>Identity privacy:</strong> Documents are stored privately and only administrators can access them. They are collected for seller verification; set a documented retention period and delete them when no longer needed. Consider a qualified identity-verification provider to avoid retaining copies where feasible.</p>
+      <div class="form-section-title location-title"><span>03</span><div><h2>Your location</h2><p>We ask for a general business area, not your home address or GPS position.</p></div></div>
       <div class="form-fields two-columns">
         <label for="seller-region">Region <span>*</span><select id="seller-region" name="region" required><option value="">Choose a region</option><option>Ahafo</option><option>Ashanti</option><option>Bono</option><option>Bono East</option><option>Central</option><option>Eastern</option><option>Greater Accra</option><option>North East</option><option>Northern</option><option>Oti</option><option>Savannah</option><option>Upper East</option><option>Upper West</option><option>Volta</option><option>Western</option><option>Western North</option></select></label>
         <label for="seller-town">Town or city <span>*</span><input id="seller-town" name="town" required maxlength="100" autocomplete="address-level2" placeholder="Town or city — no street address"></label>
       </div>
-      <p class="location-note">Do not provide a home address, live GPS location, or other precise location unless it is genuinely needed and you have explained why and how it will be protected.</p>
-
-      <label class="consent-row"><input type="checkbox" id="seller-consent" required><span>I understand this is a non-functional form preview. I will not enter real personal information or upload actual identity documents here. <b>*</b></span></label>
-      <button class="button button-dark seller-submit" type="submit">Check preview form <span aria-hidden="true">→</span></button>
+      <p class="location-note">Do not provide a home address, live GPS location, or other precise location unless genuinely needed and explained in the privacy notice.</p>
+      <label class="consent-row"><input type="checkbox" id="seller-consent" name="consent" required><span>I consent to MarketDay using my name, business/location details, Ghana Card images, and selfie to review this seller application as described above. <b>*</b></span></label>
+      <button class="button button-dark seller-submit" id="seller-submit" type="submit">Submit seller application <span aria-hidden="true">→</span></button>
       <p class="seller-form-status" id="seller-form-status" role="status" aria-live="polite"></p>
     </form>
   </main>
-  <footer class="site-footer seller-apply-footer"><div class="footer-bottom"><span>© 2026 MarketDay marketplace preview</span><span>Built for Ghana ✳</span></div></footer>
-  <script src="seller-application.js"></script>
+  <footer class="site-footer seller-apply-footer"><div class="footer-bottom"><span>© 2026 MarketDay</span><span>Built for Ghana ✳</span></div></footer>
+  <script src="supabase-config.js"></script>
+  <script type="module" src="seller-application.js"></script>
 </body>
 </html>
